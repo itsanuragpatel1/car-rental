@@ -12,7 +12,7 @@ const RecentBookings = ({recents}) => {
 
 
         <div className="recent-bookings-list">
-            {
+            {recents.length==0?<p className='notfound'>No Recent Booking Present ☹️</p>:
                 recents?.map((ele,index)=>{
                     return (
                         <RecentBookingCard name={ele.car.brand+' '+ele.car.model} date={ele.createdAt.slice(0,10)} status={ele.status} price={getDays(ele.picupDate,ele.returnDate)*ele.car.price} key={index}/>

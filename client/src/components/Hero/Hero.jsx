@@ -11,12 +11,13 @@ const Hero = () => {
     const [picupDate,setPicupDate]=useState("");
     const [returnDate,setReturnDate]=useState("");
     const [location,setLocation]=useState('')
-
+    const [loading,setLoading]=useState(false);
     const {setCars,setTest}=useAuth();
     const navigate=useNavigate();
 
     const submitHandler=async(e)=>{
         e.preventDefault();
+        setLoading(true);
         try {
             const endpoint=`${import.meta.env.VITE_BACKEND_URL}/api/booking/check-availbilty`;
             const {data}=await axios.post(endpoint,{location,picupDate,returnDate},{withCredentials:true});
@@ -26,6 +27,7 @@ const Hero = () => {
                 toast.error(data.message);
             }
             setTest(true);
+            setLoading(false);
             navigate('/cars');
         } catch (error) {
             console.log("error in submit handler",error)
@@ -59,7 +61,7 @@ const Hero = () => {
             </div>
             <button>
                 <img src={assets.search_white} alt="" height={'18px'} />
-                Search
+                {loading?'Searching...':"Search"}
             </button>
         </form>
         <img className='main-car' src={assets.main_car} name="main-car" />

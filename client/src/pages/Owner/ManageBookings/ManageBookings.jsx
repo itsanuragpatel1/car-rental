@@ -85,7 +85,7 @@ const ManageBookings = () => {
             <div className="loader-wrapper">
                 <img src={assets.loading1} alt="Loading..." className="loader" />
             </div>
-            ):(
+            ):(bookings.length==0?<p className='notfound'>No Bookings Present ☹️</p>:
             bookings?.map((booking,index)=>{
               return <ManageBookingCard booking={booking} key={index} />
             }))

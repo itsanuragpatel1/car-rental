@@ -48,7 +48,8 @@ const MyBookings = () => {
             <div className="loader-wrapper">
                         <img src={assets.loading1} alt="Loading..." className="loader" />
             </div>
-          ):(
+          ):(bookings.length==0?
+          <p className='notfound'>No Bookings Present ☹️</p>:
             <div className="my-bookings-list">
             {
               bookings?.map((booking,index)=>{

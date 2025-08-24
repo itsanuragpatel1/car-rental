@@ -82,7 +82,7 @@ useEffect(()=>{
               <div className="loader-wrapper">
                   <img src={assets.loading1} alt="Loading..." className="loader" />
               </div>
-            ):(
+            ):(carList.length==0?<p className='notfound'>No Cars Present ☹️</p>:
               carList?.map((car,index)=>{
               return <ManageCarsCard car={car} key={index} />
             })

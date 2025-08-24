@@ -64,7 +64,7 @@ const Login = (props) => {
             </div>
             <div className="box">
                 <p>Password</p>
-                <input type="text" name='password' placeholder='Enter password'  value={password} onChange={(e)=>setPassword(e.target.value)} />
+                <input type="password" name='password' placeholder='Enter password'  value={password} onChange={(e)=>setPassword(e.target.value)} />
             </div>
             {status=='Login'?<p>Create an account? <button onClick={(e)=>{e.preventDefault();setStatus('Sign Up')}}>Sign Up</button></p>: <p>Already have account? <button onClick={(e)=>{e.preventDefault();setStatus('Login')}}>Login</button></p>}
            
