@@ -1,0 +1,134 @@
+.dashboard-stats{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 17px;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 10px;
+    /* max-width: 210px; */
+    width: 210px;
+}
+
+
+.dashboard-stats img{
+    background-color: var(--color-blue-light);
+    padding: 11px;
+    border-radius: 50%;
+}
+
+.dashboard-stats p{
+    color: var(--color-gray-400);
+    font-size: 13px;
+}
+
+.dashboard-stats p span{
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+
+
+
+/* recent booking */
+
+.recent-bookings{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid var(--color-gray-300);
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.recent-bookings-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 17px;
+}
+
+.recent-bookings .desc{
+    font-size: 15px;
+}
+
+
+
+/* recent booking card */
+
+.recent-booking-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 700px; */
+    gap: 60px;
+}
+
+
+.recent-booking-card img{
+    border-radius: 50%;
+    background-color: var(--color-blue-light);
+    padding: 11px;
+}
+
+.recent-booking-card .card-left{
+    display: flex;
+    gap: 15px;
+}
+
+.recent-booking-card .card-left p{
+    font-size: 14px;
+    color: var(--color-gray-500);
+}
+
+.recent-booking-card .card-left h4{
+    font-weight: 450;
+}
+
+.recent-booking-card .card-left div{
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-booking-card .card-right{
+    display: flex;
+    gap: 10px;
+
+}
+
+
+.recent-booking-card .card-right .status{
+    padding: 1px 10px;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+
+
+
+
+/* rvenue section */
+
+.monthly-revenue{
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-gray-300);
+    height: fit-content;
+    border-radius: 10px;
+    gap: 3px;
+}
+
+.monthly-revenue h3{
+    font-weight: 500;
+}
+
+.monthly-revenue p{
+    color: var(--color-gray-500);
+    font-size: 15px;    
+}
+
+.monthly-revenue h1{
+    color: var(--color-primary);
+    margin-top: 20px;
+}

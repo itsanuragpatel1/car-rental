@@ -1,0 +1,32 @@
+.manage-bookings{
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.manage-bookings-lower{
+    border: 1px solid var(--color-gray-300);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 25px;
+    max-width: 900px;
+    width: 100%; 
+}
+
+.manage-bookings-lower .header{
+    display: grid;
+    grid-template-columns: 2.5fr 2fr 1fr 1.2fr 0.9fr;
+    border-bottom: 1px solid var(--color-gray-300);
+    padding: 15px 35px;
+}
+
+.manage-bookings-lower .header p{
+    color: var(--color-gray-400);
+}
+
+.manage-bookings-lower p{
+    color: var(--color-gray-500);
+}
+

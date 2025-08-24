@@ -1,0 +1,44 @@
+.promo-banner{
+    /* background-color: rgb(106, 163, 230); */
+   background: linear-gradient(120deg , #0558FE ,#A9CFFF);
+    padding: 40px 50px;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    color: white;
+}
+
+.promo-banner img{
+    height: 220px;
+}
+
+.promo-banner-left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.promo-banner h1{
+    font-size: 30px;
+}
+
+.promo-banner p{
+    font-size: 16px;
+
+}
+.promo-banner button{
+    width: 140px;
+    height:40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.promo-banner button:hover{
+    transform: scale(1.03);
+}

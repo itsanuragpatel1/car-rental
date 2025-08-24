@@ -1,0 +1,55 @@
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 160px 0px;
+}
+
+.newsletter h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.newsletter p{
+    font-size: 18px;
+    color: var(--color-gray-600);
+}
+
+.newsletter div{
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 55px;
+}
+
+.newsletter div input{
+    width: 510px;
+    max-width: 810px;
+    height: 50px;
+    padding: 0px 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border: 1px solid rgb(196, 193, 193);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    
+}
+
+.newsletter div input::placeholder{
+    color: 1px solid rgb(196, 193, 193);
+}
+
+.newsletter div button{
+    font-size: 16px;
+    width: 160px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: var(--color-primary);
+    cursor: pointer;
+    color: white;
+}
+
+.newsletter div button:hover{
+    background:var(--color-primary-dull);
+}

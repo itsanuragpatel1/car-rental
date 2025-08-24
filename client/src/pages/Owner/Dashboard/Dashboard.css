@@ -1,0 +1,21 @@
+.dashboard{
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard .stats-list{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0px;
+}
+
+.dashboard .dashboard-lower{
+    display: flex;
+    gap: 20px;
+}
+
+.desc{
+    color: var(--color-gray-500);
+}

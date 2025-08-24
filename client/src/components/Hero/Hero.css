@@ -1,0 +1,61 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    height: 100vh;
+    max-height: 800px;
+    background-color: #f1f5f9;
+}
+
+.hero h1{
+    font-size: 50px;
+}
+
+.hero .main-car{
+    width: 900px;
+}
+
+.hero form{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 100px;
+    padding: 23px 50px;
+    gap: 50px;
+}
+
+.hero form div input{
+    height: 25px;
+    width: 130px;
+    border: none;
+    margin-top: 8px;
+}
+
+.hero form button{
+    width: 140px;
+    height: 50px;
+    background-color: var(--color-primary-dull);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hero form button:hover{
+    background-color: var(--color-primary);
+    transform: scale(1.03);
+    transition-duration: 0.1s;
+}
+
+.hero form select{
+    border: none;
+    outline: none;
+    padding: 0px;
+}

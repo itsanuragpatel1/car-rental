@@ -1,0 +1,63 @@
+.manage-cars-card{
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1.2fr 0.8fr;
+    border-bottom: 1px solid var(--color-gray-300);
+    height: min-content;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.manage-cars-card .car-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.manage-cars-card .car-details div .car-name{
+    color: var(--color-gray-600);
+}
+
+.manage-cars-card .car-details div .more-details{
+    font-size: 13px;
+}
+
+.manage-cars-card .car-details img{
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.manage-cars-card .actions{
+    display: flex;
+    gap: 15px;
+}
+
+.manage-cars-card .actions img{
+    cursor: pointer;
+}
+
+.manage-cars-card .available{
+    background-color: var(--);
+}
+
+.manage-cars-card .status{
+    background-color: var(--color-red-light);
+    color: red;
+    font-size: 15px;
+    width: fit-content;
+    padding: 1px 10px;
+    border-radius: 20px;
+}
+
+.manage-cars-card .status.available{
+    background-color: var(--color-green-light);
+    color: green;
+
+}
+
+.manage-cars-card .actions .delete:hover{
+    border-radius: 50%;
+    background-color: var(--color-red-light);
+}

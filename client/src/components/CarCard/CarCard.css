@@ -1,0 +1,77 @@
+.car-card{
+    /* border: 1px solid; */
+    border-radius: 15px;
+   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.car-card:hover{
+    transform: scale(1.009);
+}
+
+.car-card-upper{
+    position: relative;
+}
+
+.car-card-upper img{
+    border-radius: 10px 10px 0px 0px;
+    height: 200px;
+    width: 100%;
+}
+
+.car-card-upper .availablity{
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    background-color: rgb(71, 71, 224);
+    border-radius: 10px;
+    padding:5px;
+    font-size: 12px;
+    color: white;   
+}
+
+.car-card-upper .charges{
+    position: absolute;
+    color: rgb(175, 165, 165);
+    right: 14px;
+    bottom: 12px;
+    background-color: rgb(32, 32, 32);
+    padding: 8px;
+    border-radius: 10px;
+}
+.car-card-upper .charges span{
+    font-size: 18px;
+    color: white;
+}
+
+.car-card-lower{
+    padding: 20px 23px;
+}
+
+.car-card-lower .car-main-details h3{
+    font-size: 18px;
+}
+
+.car-card-lower .car-main-details h4{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 3px 0px 15px 0px;
+}
+
+
+.car-card-lower .car-additional-details{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 10px 0px;
+   color: var(--color-gray-600);
+   font-size: 14px;
+}
+
+.car-additional-details div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.car-additional-details div img{
+    height: 14px;
+}

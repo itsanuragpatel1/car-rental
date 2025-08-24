@@ -1,0 +1,28 @@
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+
+    margin: 140px 0px;
+}
+
+.testimonial-text{
+    text-align: center;
+}
+
+.testimonial-text p{
+    color: var(--color-gray-600);
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.testimonial-text h1{
+    font-size: 36px;
+}
+
+.testimonials-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px 50px;
+}

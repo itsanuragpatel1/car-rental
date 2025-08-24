@@ -1,0 +1,79 @@
+.add-car-form{
+    /* width: 700px; */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+#upload-image{
+    display: none;
+}
+
+.add-car-form p{
+    color: var(--color-gray-500);
+    font-size: 15px;
+}
+
+.layer-one{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.layer-one img{
+height: 60px;
+cursor: pointer;
+}
+
+.layer-two{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0px 20px;
+}
+
+.layer-three, .layer-four{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 0px 20px;
+}
+
+
+.add-car-form input,textarea,select{
+    width: 100%;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 10px;
+    outline: none;
+    color: var(--color-gray-600);
+
+}
+
+
+.add-car-form input,select{
+    height: 35px;
+    padding: 0px 10px;
+}
+
+.add-car-form textarea{
+    height: 100px;
+    padding: 10px;
+}
+
+
+.add-car-form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 50px;
+    width: 150px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--color-primary);
+}
+
+.add-car-form button:hover{
+    background-color: var(--color-primary-dull);
+}

@@ -1,0 +1,94 @@
+.my-booking-card{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--color-gray-300);
+    padding: 22px 26px;
+    border-radius: 10px;
+
+    margin-top: 30px;  
+    max-width: 1000px;
+    /* to remove */
+}
+
+
+.booking-left img{
+    height: 120px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.booking-left h1{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.booking-left p{
+    color: var(--color-gray-500);
+}
+
+
+
+
+
+.booking-middle{
+    flex: 1;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.booking-middle .info{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.booking-middle-top{
+    display: flex;
+    gap: 10px;
+}
+
+.booking-middle-top p{
+    background-color: var(--color-gray-300);
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-size: 14px;
+}
+
+
+.booking-middle .info div p:nth-of-type(1){
+    color: var(--color-gray-500);
+    margin-bottom: 2px;
+}
+
+.booking-middle .confirm{
+    background-color: var(--color-green-light);
+    color: green;
+}
+
+.booking-middle .cancel{
+    background-color: var(--color-red-light);
+    color: red;
+}
+
+
+
+
+
+.booking-right{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+.booking-right p{
+    color: var(--color-gray-500);
+}
+
+.booking-right h4{
+    font-size: 35px;
+    font-weight: 450;
+    color: var(--color-primary);
+}

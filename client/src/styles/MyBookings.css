@@ -1,0 +1,15 @@
+.my-bookings{
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.my-bookings-text h1{
+ font-size: 42px;
+}
+
+.my-bookings-text p{
+    font-size: 18px;
+    color: var(--color-gray-500);
+    margin-top: 5px;
+}

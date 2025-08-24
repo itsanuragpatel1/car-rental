@@ -1,0 +1,74 @@
+.manage-booking-card{
+    display: grid;
+    grid-template-columns: 2.5fr 2fr 1fr 1.2fr 0.9fr;
+    border-bottom: 1px solid var(--color-gray-300);
+    height: min-content;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.manage-booking-card .car-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.manage-booking-card .car-details div .car-name{
+    color: var(--color-gray-600);
+}
+
+.manage-booking-card .car-details div .more-details{
+    font-size: 13px;
+}
+
+.manage-booking-card .car-details img{
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.manage-booking-card .actions select{
+   border-radius: 10px;
+   border: 2px solid var(--color-gray-500);
+   color: var(--color-gray-500);
+   outline: none;
+  padding: 2px 5px;
+}
+
+/* .manage-booking-card .actions{
+    
+    border-radius: 5px;
+    width: fit-content;
+    padding: 2px 10px;
+} */
+
+
+/* .manage-booking-card .available{
+    background-color: var(--);
+} */
+
+.manage-booking-card .actions .status{
+    font-size: 15px;
+    width: fit-content;
+    padding: 2px 13px;
+    border-radius: 20px;
+}
+
+.manage-booking-card .actions .confirm{
+    background-color: var(--color-green-light);
+    color: green;
+}
+
+.manage-booking-card .actions .cancel{
+    background-color: var(--color-red-light);
+    color: red;
+}
+
+.manage-booking-card .payment{
+    background-color: var(--color-gray-200);
+    width: fit-content;
+    padding: 1px 6px;
+    border-radius: 10px;
+}
