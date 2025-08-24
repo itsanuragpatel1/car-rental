@@ -36,7 +36,7 @@ const handleChange=async(e)=>{
     <div className='sidebar'>
         <div className="sidebar-profile">
           <div className='images'>
-            <img src={user.avatar?user.avatar:assets.user_profile}  className='profile'/>
+            <img src={user.avatar?user.avatar:assets.user_profile1}  className='profile'/>
             <label htmlFor="profile"><img src={assets.edit1} alt="" className='edit' /></label>
           </div>
             <input type="file" hidden id='profile' onChange={(e)=>{handleChange(e)}}/>
