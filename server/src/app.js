@@ -8,10 +8,11 @@ import cors from 'cors'
 const app=express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',  // your frontend port
+  origin:['http://localhost:5173','https://car-rental-client-beta.vercel.app'] ,  
   credentials: true                // allow cookies
 }));
 // app.use(cors())
+
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser())
