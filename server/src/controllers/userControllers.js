@@ -183,15 +183,17 @@ const searchCar=async(req,res)=>{
 const updateAvatar=async(req,res)=>{
     try {
         const userID=req.user;
-        const avatar=req.file;
-    
-        if(!avatar){
+        
+        if(!req.file){
             return res.json({success:false,message:"please Upload File"})
         }
 
         const user=await userModel.findById(userID);
 
-        const uploadResult=await uploadImage(avatar.path);
+        const uploadResult=await uploadImage(req.file.buffer);
+        if(!uploadResult){
+            res.status(500).json({success:false,message:"Failed to upload file"})
+        }
 
         user.avatar=uploadResult.url;
         await user.save({validateBeforeSave:false})

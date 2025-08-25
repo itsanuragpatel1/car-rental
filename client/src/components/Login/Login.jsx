@@ -2,8 +2,7 @@ import React, {useState } from 'react'
 import './Login.css'
 import toast from 'react-hot-toast'
 import { useAuth } from '../../context/AuthContext.jsx'
-// import { useLocation } from 'react-router-dom';
-// import { useEffect } from 'react';
+import axios from 'axios'
 
 const Login = (props) => {
 
@@ -12,39 +11,28 @@ const Login = (props) => {
     const [name,setName]=useState('');
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('');
+    const [loading,setLoading]=useState(false);
     
-    //testing code block
-    // const location=useLocation();
-    // useEffect(()=>{
-    //     console.log(location);
-    // },[])
-    const {user,loginUser}=useAuth();
+    const {loginUser}=useAuth();
     
     const submitHandler=async(e)=>{
         e.preventDefault();
+        setLoading(true)
 
         const endpoint=status=='Login'?`${import.meta.env.VITE_BACKEND_URL}/api/user/login`:`${import.meta.env.VITE_BACKEND_URL}/api/user/register`;
         const userData={name,email,password};
         // console.log(userData ,endpoint);
-        const res = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // this allows cookies like accessToken to be stored
-        body: JSON.stringify(userData),
-      });
-      const ans=await res.json();
-      console.log(res);
-      console.log(ans);
-      if(ans.success){
-        toast.success(ans.message);
-        loginUser(ans.userData);
+        const {data}=await axios.post(endpoint,userData,{withCredentials:true});
+        
+      if(data.success){
+        toast.success(data.message);
+        loginUser(data.userData);
         props.setShowLogin(false);
-        console.log(user);
       }else{
-         toast.error(ans.message);
+         toast.error(data.message);
       }
+
+      setLoading(false)
     }
 
    
@@ -68,7 +56,7 @@ const Login = (props) => {
             </div>
             {status=='Login'?<p>Create an account? <button onClick={(e)=>{e.preventDefault();setStatus('Sign Up')}}>Sign Up</button></p>: <p>Already have account? <button onClick={(e)=>{e.preventDefault();setStatus('Login')}}>Login</button></p>}
            
-            <button className='submit'>{status}</button>
+            <button className='submit'>{loading?'Please wait':status}</button>
             </form>
     </div>
   )

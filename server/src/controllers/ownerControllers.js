@@ -13,26 +13,22 @@ const addCar=async(req,res)=>{
         if(!brand || !model || !year || !price || !category || !transmission || !fuelType || !capacity || !location || !description){
             return res.json({succes:false , message:"Please fill all fields"});
         }
-        const imageFile=req.file;
-        if(!imageFile){
+        
+        if(!req.file){
             return res.json({success:false,message:"Upload Car Image"})
         }
         
-        const carImage=await uploadImage(imageFile.path);
+        const carImage=await uploadImage(req.file.buffer);
+
+        if(!carImage){
+            return res.status(500).json({success:false,message:"Failed to upload file"})
+        }
+
         const carInfo=await carModel.create({carImage:carImage.url,brand,model,year,price,category,transmission,fuelType,capacity,location,description,owner:userID});
         
         if(!carInfo){
             return res.json({success:false,message:"Car adding failed"});
         }
-        
-
-        fs.unlink(imageFile.path, (err) => {
-        if (err) {
-            console.log("Failed to delelte file:", imageFile.path, err);
-        } else {
-            console.log("File deleted successfully:", imageFile.path);
-        }
-        });
 
         res.json({success:true,message:"Car added successfully"})
     } catch (error) {

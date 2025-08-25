@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Sidebar.css'
 import { assets , ownerMenuLinks} from '../../../assets/assets'
 import {Link,useLocation} from 'react-router-dom'
@@ -8,10 +8,13 @@ import toast from 'react-hot-toast'
 
 const Sidebar = () => {
 
+  const [loading,setLoading]=useState(false);
+
 const location=useLocation();
 const {user,updateImage}=useAuth();
 
 const handleChange=async(e)=>{
+  setLoading(true);
   const file=e.target.files[0];
   const form=new FormData();
   form.append("avatar",file);
@@ -24,11 +27,13 @@ const handleChange=async(e)=>{
     toast.success(data.message);
   }else{
      toast.error(data.message);
+      setLoading(false);
      return
   }
 
+
   updateImage(data.userData.avatar);
-  
+  setLoading(false);
 }
 
 
@@ -36,7 +41,7 @@ const handleChange=async(e)=>{
     <div className='sidebar'>
         <div className="sidebar-profile">
           <div className='images'>
-            <img src={user.avatar?user.avatar:assets.user_profile1}  className='profile'/>
+            <img src={loading?assets.loading1:user.avatar?user.avatar:assets.user_profile1}  className='profile'/>
             <label htmlFor="profile"><img src={assets.edit1} alt="" className='edit' /></label>
           </div>
             <input type="file" hidden id='profile' onChange={(e)=>{handleChange(e)}}/>
