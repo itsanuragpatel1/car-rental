@@ -25,13 +25,13 @@ const AuthContextProvider=({children})=>{
 
     const logout=async ()=>{
         const endPoint=`${import.meta.env.VITE_BACKEND_URL}/api/user/logout`;
-        const res=await axios.get(endPoint,{withCredentials:true})
+        const {data}=await axios.get(endPoint,{withCredentials:true})
 
-        if(res.data.success){
-            toast.success(res.data.message);
+        if(data.success){
+            toast.success(data.message);
             setUser(null);
         }else{
-            toast.error(res.data.message);
+            toast.error(data.message);
         }
     }
 
@@ -39,9 +39,9 @@ const AuthContextProvider=({children})=>{
     useEffect(()=>{
         const fetchUser=async()=>{
             const endPoint=`${import.meta.env.VITE_BACKEND_URL}/api/user/getUser`;
-            const res=await axios.get(endPoint,{withCredentials:true});
-            if(res.data.success){
-                setUser(res.data.userData);
+            const {data}=await axios.get(endPoint,{withCredentials:true});
+            if(data.success){
+                setUser(data.userData);
             }
             setLoading(false);
         }
