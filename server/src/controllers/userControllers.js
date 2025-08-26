@@ -98,6 +98,7 @@ const logoutUser=async(req,res)=>{
             httpOnly:true,
             secure:true,
             sameSite:"none",
+            maxAge:0
         }
     
         res

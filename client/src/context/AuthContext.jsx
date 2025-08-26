@@ -25,7 +25,7 @@ const AuthContextProvider=({children})=>{
 
     const logout=async ()=>{
         const endPoint=`${import.meta.env.VITE_BACKEND_URL}/api/user/logout`;
-        const {data}=await axios.get(endPoint,{withCredentials:true})
+        const {data}=await axios.post(endPoint,{},{withCredentials:true})
 
         if(data.success){
             toast.success(data.message);

@@ -7,7 +7,7 @@ const router=express.Router()
 
 router.post('/register',registerUser)
 router.post('/login',loginUser)
-router.get('/logout',logoutUser)
+router.post('/logout',logoutUser)
 router.get('/getUser',getUserProfile)
 router.get('/preview-cars',previewCars)
 router.get('/all-cars',allCars)
