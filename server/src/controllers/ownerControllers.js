@@ -85,12 +85,13 @@ const changeStatus=async(req,res)=>{
     try {
         const userID=req.user;
 
+        const now=new Date();
+
         const totalCars=await carModel.find({owner:userID}).countDocuments();
         const totalBookings=await bookingModel.find({whoseBooked:userID}).countDocuments();
-        const pendingBookings=await bookingModel.find({$and:[{whoseBooked:userID},{status:'pending'}]}).countDocuments();
-        const completedBookings=await bookingModel.find({$and:[{whoseBooked:userID},{status:'confirm'}]}).countDocuments();
+        const pendingBookings=await bookingModel.find({whoseBooked:userID,status:'pending'}).countDocuments();
+        const completedBookings=await bookingModel.find({whoseBooked:userID,status:'confirm',returnDate:{$lte:now}}).countDocuments();
         
-        const now=new Date();
         const startDate=new Date(now);
         startDate.setMonth(startDate.getMonth()-1);
 
