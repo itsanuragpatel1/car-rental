@@ -6,7 +6,7 @@ import { useAuth } from '../../../context/AuthContext'
 
 const NavbarOwner = () => {
   const {user}=useAuth();
-  console.log(user);
+  // console.log(user);
   return (
     <div className='navbar-owner'>
       <Link to={'/'} ><img src={assets.logo} alt="" /></Link>   

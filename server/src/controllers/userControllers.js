@@ -35,7 +35,8 @@ const registerUser=async (req,res)=>{
         const options={
             httpOnly:true,
             secure:true,
-            sameSite:'none'
+            sameSite:'none',
+            maxAge: 1000*60*60*24*7,
         }
 
         const userData=user.toObject();
@@ -73,7 +74,8 @@ const loginUser=async (req,res)=>{
          const options={
             httpOnly:true,
             secure:true,
-            sameSite:"none"
+            sameSite:"none",
+            maxAge: 1000*60*60*24*7,
         }
         
         const userData=user.toObject();
@@ -95,12 +97,12 @@ const logoutUser=async(req,res)=>{
         const options={
             httpOnly:true,
             secure:true,
-            sameSite:"none"
+            sameSite:"none",
         }
     
         res
-        .clearCookie("accessToken",options)
-        .json({success:true,message:"Logout SucessFully"})
+        .cookie("accessToken",null,options)
+        .json({success:true,message:"Logout Sucessfully"})
     } catch (error) {
         console.log(error);
         res.json({success:false,message:error.message})      
